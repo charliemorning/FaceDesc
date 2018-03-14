@@ -99,3 +99,21 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# idea pycharm
+.idea
+__pycache__
+
+# models
+models
+
+# logs
+logs
+
+# data
+data/birth
+data/emotion
+data/gender
+data/hybrid
+data/image
+data/face_recognition_face_rep.txt
