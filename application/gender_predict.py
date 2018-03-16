@@ -29,6 +29,7 @@ def predict_gender(image):
     else:
         return "male"
 
+
 if __name__ == "__main__":
 
     base_path = sys.argv[1]

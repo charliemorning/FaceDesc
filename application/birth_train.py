@@ -4,9 +4,8 @@ import numpy as np
 from keras.utils import np_utils
 from sklearn.preprocessing import LabelEncoder
 
-import data.dataset as dataset
+import prepare.dataset as dataset
 from network.mobilenet import MobileNet
-from network.inception_resnet_v2 import InceptionResNetV2
 
 birth_year = [1940, 1950, 1960, 1970, 1980, 1990, 2000, 2010]
 

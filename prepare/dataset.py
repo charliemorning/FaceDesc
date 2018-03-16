@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 
 
-import os
-import csv
-import numpy as np
 import math
-from skimage import io, transform
-from keras.utils import np_utils
-from keras.preprocessing.image import ImageDataGenerator
-from keras import backend as K
+import os
+
 import cv2
+import numpy as np
+from keras import backend as K
+from keras.preprocessing.image import ImageDataGenerator
+from keras.utils import np_utils
+from skimage import io, transform
 
 
 def load_fer2013(path):
@@ -51,7 +51,43 @@ def get_keras_image_data_generator_from_directory(
         rescale=None,
         preprocessing_function=None,
         data_format=K.image_data_format()):
-    """"""
+    """
+
+    :param path:
+    :param target_size:
+    :param fit_x_train:
+    :param color_mode:
+    :param classes:
+    :param class_mode:
+    :param batch_size:
+    :param shuffle:
+    :param seed:
+    :param save_to_dir:
+    :param save_prefix:
+    :param save_format:
+    :param follow_links:
+    :param interpolation:
+    :param featurewise_center:
+    :param samplewise_center:
+    :param featurewise_std_normalization:
+    :param samplewise_std_normalization:
+    :param zca_whitening:
+    :param zca_epsilon:
+    :param rotation_range:
+    :param width_shift_range:
+    :param height_shift_range:
+    :param shear_range:
+    :param zoom_range:
+    :param channel_shift_range:
+    :param fill_mode:
+    :param cval:
+    :param horizontal_flip:
+    :param vertical_flip:
+    :param rescale:
+    :param preprocessing_function:
+    :param data_format:
+    :return:
+    """
 
     generator = ImageDataGenerator(featurewise_center=featurewise_center,
                                    samplewise_center=samplewise_center,
@@ -106,6 +142,17 @@ def data_generator(config_path,
                    batch_size,
                    input_shape=None,
                    label_parser=lambda label: label):
+    """
+    User deifned data generator. This is main data generator.
+    :param config_path: It is a text file, each line of content contains image path and label, seperated by tab.
+     User can define a label to process label.
+    :param label_encoder: A global label encoder provided by sklearn.preprocessing.LabelEncoder.
+    :param class_num: number of classes.
+    :param batch_size: Number of images per batch.
+    :param input_shape: Input shape.
+    :param label_parser: Default to output the label directly without any process.
+    :return: batch of data generator
+    """
 
     filename_label_pairs = []
     with open(config_path, "r") as f:
@@ -147,8 +194,6 @@ def data_generator(config_path,
         ohr_y_train = np_utils.to_categorical(encoded_labels_array, class_num)
 
         yield np.asarray(imgs_batch), ohr_y_train
-
-
 
 
 def data_hybrid_generator(config_path,

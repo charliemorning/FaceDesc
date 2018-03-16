@@ -2,10 +2,10 @@
 
 import keras
 import numpy as np
-import data.dataset as dataset
 from keras.utils import np_utils
 from sklearn.preprocessing import LabelEncoder
 
+import prepare.dataset as dataset
 from network.mobilenet import MobileNet
 
 

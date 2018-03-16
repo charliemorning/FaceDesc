@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 
-
-import os
 import csv
+import os
+from collections import Counter
+
 import cv2
 import numpy as np
 from sklearn.model_selection import train_test_split
 
 
 def write_file(x, y, filename):
-
     with open(filename, "w") as f:
         for i in range(x.__len__()):
             f.write(x[i])
@@ -96,7 +96,7 @@ def prepare_hybrid_class(path):
     write_label_file(set(birth_labels_list), "age_label.txt")
 
 
-from collections import Counter
+
 
 def prepare_fer2013(fer2013_path, dst_path):
 
@@ -135,8 +135,6 @@ def extract_face_repr(src_path, dst_path):
             X.append(vect[0])
             Y.append(label)
 
-
-
     with open(dst_path, "w") as f:
         for i in range(X.__len__()):
             f.write(" ".join([str(v) for v in X[i]]))
@@ -145,11 +143,9 @@ def extract_face_repr(src_path, dst_path):
             f.write("\n")
 
 
-
-
 if __name__ == "__main__":
     # prepare_gender_birth_train_test_meta_file("C:/developer/dataset/gender_test/train/")
-    prepare_train_test_meta_file("C:/developer/dataset/emotion/", "emotion_train.txt", "emotion_test.txt")
+    # prepare_train_test_meta_file("C:/developer/dataset/emotion/", "emotion_train.txt", "emotion_test.txt")
     # pass
     # prepare_hybrid_class("C:/developer/dataset/gender_test/train/")
 

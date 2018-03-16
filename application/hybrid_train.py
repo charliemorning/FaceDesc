@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 
-import data.dataset as dataset
+import numpy as np
 from keras.utils import np_utils
 from sklearn.preprocessing import LabelEncoder
-import numpy as np
+
+import prepare.dataset as dataset
 from network.xception import Xception
+
 
 def run_hybrid_xception():
 
@@ -44,7 +46,7 @@ def run_hybrid_xception():
                                                         birth_encoder,
                                                         genders.__len__(),
                                                         births.__len__(),
-                          1),
+                                                        1),
                           loss="categorical_crossentropy",
                           optimizer="sgd",
                           steps_per_epoch=8,
