@@ -16,13 +16,15 @@ I have tried several network, such as Xeception, VGG16, Inception_resnet_v2 and 
 
 The validation dataset is 5% verse the rest.
 
-Gender model
+Gender model:
+
 | Softmax Index | Description |
-| :---: | :---: |
+| :---: |:---: |
 | 0 | Male |
 | 1 | Female |
 
-Birth Model
+Birth Model:
+
 | Softmax Index | Description |
 | :---: | :---: |
 | 0 | 1940 |
@@ -46,18 +48,6 @@ I used about 400,000 images of Chinese people with currect age and gender label 
 
 You need prepare your image dataset by yourself. I used *align_dataset_mtcnn.py* and *facenet.py* in [davidsandberg](https://github.com/davidsandberg)'s [FaceNet](https://github.com/davidsandberg/facenet) to do face detection and face representation. You can also use other method to achieve the same goal. After face detection, you should arrange your dataset in the situation in which the face image in 'Male' directory and 'Female' directory if you want to train a gender model, or in birth directory if train a birth model.
 
-For example:
->-- your dataset path <br/>
->  -- Male<br/>
->    -- 0001.PNG<br/>
->    -- 0002.PNG<br/>
->    ...<br/>
->    -- xxxx.PNG<br/>
->&nbsp&nbsp-- Female<br/>
->&nbsp&nbsp&nbsp&nbsp-- 0001.PNG<br/>
->&nbsp&nbsp&nbsp&nbsp-- 0002.PNG<br/>
->&nbsp&nbsp&nbsp&nbsp...<br/>
->&nbsp&nbsp&nbsp&nbsp-- xxxx.PNG<br/>
 
 ## Train
 To implement a gender classifier by using keras. In gender_train.py, a mobilenet, which was provided by Keras team, was used. If you want to train your own model, just run *gender_train.py(or birth_predict.py)*. You can choose other network in network directory.
