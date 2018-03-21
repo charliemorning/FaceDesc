@@ -12,17 +12,20 @@ I have tried several network, such as Xeception, VGG16, Inception_resnet_v2 and 
 2018.03.21 Pretrained model has been uploaded, and new model with more training data is coming in few days.
 
 | Model Scope | Model File Link | Update Date | Val. Acc. | Note |
-| - | - | - | - |
+| - | - | - | - | - |
 | Gender | [gender.mobilenet.augment.18-0.00.model](https://pan.baidu.com/s/1svMqEQtSfpT2Nl3jVU0XlA) | 20180312 | 99.1% | password:doda | 
 | Birth | [birth.mobilenet.07-0.81.model](https://pan.baidu.com/s/1vi92LYbC8toSrVsQCa9hwQ) | 20180312 | 70.3% | password:6w09 |
 
 The validation dataset is 5% verse the rest.
 
-| Model | Softmax Index | Description | 
-| - | - | - |
-| Gender model | 0 | Male |
+Gender model:
+| Softmax Index | Description | 
+| - | - |
+| 0 | Male |
 | 1 | Female |
-| Birth Model | 0 | 1940 |
+Birth Model:
+| Softmax Index | Description | 
+| 0 | 1940 |
 | 1 | 1950 |
 | 2 | 1960 |
 | 3 | 1970 |
