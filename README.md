@@ -16,15 +16,15 @@ I have tried several network, such as Xeception, VGG16, Inception_resnet_v2 and 
 
 The validation dataset is 5% verse the rest.
 
-Gender model:
+Gender model
 | Softmax Index | Description |
-| ------------- | ----------- |
+| :---: | :---: |
 | 0 | Male |
 | 1 | Female |
 
-Birth Model:
+Birth Model
 | Softmax Index | Description |
-| ------------- | ----------- |
+| :---: | :---: |
 | 0 | 1940 |
 | 1 | 1950 |
 | 2 | 1960 |
@@ -48,11 +48,11 @@ You need prepare your image dataset by yourself. I used *align_dataset_mtcnn.py*
 
 For example:
 >-- your dataset path <br/>
->&nbsp&nbsp-- Male<br/>
->&nbsp&nbsp&nbsp&nbsp-- 0001.PNG<br/>
->&nbsp&nbsp&nbsp&nbsp-- 0002.PNG<br/>
->&nbsp&nbsp&nbsp&nbsp...<br/>
->&nbsp&nbsp&nbsp&nbsp-- xxxx.PNG<br/>
+>  -- Male<br/>
+>    -- 0001.PNG<br/>
+>    -- 0002.PNG<br/>
+>    ...<br/>
+>    -- xxxx.PNG<br/>
 >&nbsp&nbsp-- Female<br/>
 >&nbsp&nbsp&nbsp&nbsp-- 0001.PNG<br/>
 >&nbsp&nbsp&nbsp&nbsp-- 0002.PNG<br/>
