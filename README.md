@@ -21,6 +21,7 @@ Gender model:
 | - | - |
 | 0 | Male |
 | 1 | Female |
+
 Birth Model:
 | Softmax Index | Description | 
 | - | - |
@@ -46,17 +47,17 @@ I used about 400,000 images of Chinese people with currect age and gender label 
 You need prepare your image dataset by yourself. I used *align_dataset_mtcnn.py* and *facenet.py* in [davidsandberg](https://github.com/davidsandberg)'s [FaceNet](https://github.com/davidsandberg/facenet) to do face detection and face representation. You can also use other method to achieve the same goal. After face detection, you should arrange your dataset in the situation in which the face image in 'Male' directory and 'Female' directory if you want to train a gender model, or in birth directory if train a birth model.
 
 For example:
--- your dataset path
-  -- Male
-    -- 0001.PNG
-    -- 0002.PNG
-    ...
-    -- xxxx.PNG
-  -- Female
-    -- 0001.PNG
-    -- 0002.PNG
-    ...
-    -- xxxx.PNG
+-- your dataset path <br/>
+  -- Male<br/>
+    -- 0001.PNG<br/>
+    -- 0002.PNG<br/>
+    ...<br/>
+    -- xxxx.PNG<br/>
+  -- Female<br/>
+    -- 0001.PNG<br/>
+    -- 0002.PNG<br/>
+    ...<br/>
+    -- xxxx.PNG<br/>
 
 ## Train
 To implement a gender classifier by using keras. In gender_train.py, a mobilenet, which was provided by Keras team, was used. If you want to train your own model, just run *gender_train.py(or birth_predict.py)*. You can choose other network in network directory.
